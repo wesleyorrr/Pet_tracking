@@ -24,6 +24,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        supportActionBar!!.hide()
 
         latitudeTextView = findViewById(R.id.latitudeTextView)
         longitudeTextView = findViewById(R.id.longitudeTextView)
@@ -45,7 +46,7 @@ class MainActivity : AppCompatActivity() {
         petViewModel.isPetInsideArea.observe(this) { isInside ->
             if (isInside) {
                 resultTextView.text = "Traquilo... Ele está em casa"
-                resultTextView.setTextColor(Color.GREEN)
+                resultTextView.setTextColor(Color.BLACK)
                 imageView.setImageResource(R.drawable.pet_parado)
             } else {
                 resultTextView.text = "Ops.... Fugiu Correr!!!"
